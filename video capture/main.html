@@ -6,6 +6,7 @@
   </title>
   <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='./newStyle.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Orbitron:500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
 {% if result==0 %}
@@ -13,16 +14,34 @@
 alert("Account not found!!");
 </script>
 {% endif %}
-  <div class="main_grid">
-    <div class="title">
-      <table>
-        <tr class="row1">
-          <td width=85%><h1 style="font-family: 'Orbitron', sans-serif;">Easy Tickets</h1></td>
-        <!--<td class="tabs">Register ID</td>
-          <td class="tabs">Change Id</td>-->
-        </tr>
-      </table>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">E-Passport System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class"form-inline my-2 my-lg-0" style="cursor:pointer">
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">LOGIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">REGISTER</a>
+      </li>
+    </ul>
+</nav>
+    
 <div class="camera">
       <div id="my_camera"></div>
 
