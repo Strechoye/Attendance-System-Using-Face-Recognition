@@ -3,7 +3,8 @@ import sqlite3
 import cv2
 
 app = Flask(__name__, template_folder='video capture')
-
+app.config['DEBUG'] = True
+app.secret_key = 'Plutoye'
 
 @app.route('/')
 def login():
