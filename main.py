@@ -11,7 +11,7 @@ def login():
     return render_template('main.html')
 
 
-@app.route('/su')
+@app.route('/register')
 def su():
     return render_template('signup.html')
 
