@@ -10,11 +10,13 @@ app.secret_key = 'Plutoye'
 def login():
     return render_template('main.html')
 
-
 @app.route('/register')
 def su():
     return render_template('signup.html')
 
+@app.route('/login')
+def si():
+    return render_template('signin.html')
 
 @app.route('/sign', methods=['POST', 'GET'])
 def details():
