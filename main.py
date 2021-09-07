@@ -22,6 +22,10 @@ def registerFace():
 def si():
     return render_template('signin.html')
 
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
 @app.route('/sign', methods=['POST', 'GET'])
 def details():
     if request.method == 'POST':
@@ -98,15 +102,11 @@ def details():
         cv2.destroyAllWindows()
         return redirect(url_for('login'))
 
-
 @app.route('/image')
 def login_face():
-    faceDetect = cv2.CascadeClassifier(
-        './haarcascade_frontalface_default.xml')
-
+    faceDetect = cv2.CascadeClassifier('./haarcascade_frontalface_default.xml')
     rec = cv2.face.LBPHFaceRecognizer_create()
-    rec.read(
-        './recogniser/trainingData.yml')
+    rec.read('./recogniser/trainingData.yml')
     import time
     time.sleep(5)
     img = cv2.imread('./login/input.png')
@@ -150,7 +150,7 @@ def login_get():
             # print('nahi hai')
             account = 0
             # return redirect(url_for('open'))
-            return render_template('main.html', result=account)
+            return render_template('signin.html', result=account)
         else:
             user = row[0][1]
             id = row[0][0]

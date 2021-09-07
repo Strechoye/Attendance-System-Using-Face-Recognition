@@ -83,7 +83,7 @@
     </div>
     <script language="JavaScript">
         Webcam.set({
-            width: 400,
+            width: 300,
             height: 300,
             image_format: 'png',
             jpeg_quality: 90
@@ -97,7 +97,6 @@
                     '<img id="saveImg"  src="' + data_uri + '"/>';
             });
         }
-
         saveFile.onclick = function() {
             var a = document.createElement('a');
             a.href = saveImg.src;
@@ -109,8 +108,6 @@
             b.click();
         };
     </script>
-
-
 </body>
 
 </html>
