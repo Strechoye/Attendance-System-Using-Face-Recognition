@@ -79,7 +79,26 @@
             <a href="# " class="nav_link "> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name ">SignOut</span> </a>
         </nav>
     </div><br><br><br>
-
+    <div class="container">
+        <table class="table1">
+            <tr>
+                <th colspan="2">User Details</th>
+            </tr>
+            <tr>
+                <td colspan="2">User Name: {{result[0][1].upper()}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">Contact Number: {{result[0][3]}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">Address: {{result[0][5].upper()}}</td>
+            </tr>
+            <tr>
+                <td><input type="button" name="" value="EDIT PROFILE"></td>
+                <td><input type="button" name="" value="ADD MONEY"></td>
+            </tr>
+        </table>
+    </div>
     <!--Navbar-->
     <script src="navbar.js "></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
