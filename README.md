@@ -1,4 +1,4 @@
-# E-Passort-using-Face-Recognition
+# E-Passort-System-using-Face-Recognition
 The E-Passport Application using Face Recognition provides users the ability to store their passport in a database and can also retrieve those stored information for use.
 The application also provides an easy login process for a user with his/her registered face in the database to access his account as well as informations
 1. Entry Module:
