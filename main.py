@@ -14,6 +14,10 @@ def login():
 def su():
     return render_template('signup.html')
 
+@app.route('/registerFace')
+def registerFace():
+    return render_template('registerFace.html')
+
 @app.route('/login')
 def si():
     return render_template('signin.html')

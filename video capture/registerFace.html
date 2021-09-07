@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Face</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">E-Passport System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutUs">About Us</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="form-inline my-2 my-lg-0" style="cursor:pointer">
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/register">Register</a>
+                </li>
+            </ul>
+
+    </nav>
+    <br><br><br><br>
+    <div class="container">
+        <div class="camera">
+            <div id="my_camera"></div>
+
+            <div class="mybutton">
+                <form action="https://localhost:5000/scrap" method="post">
+                    <input type="button" value="TAKE A SNAP" onclick="take_snapshot()">
+                </form>
+                <input type="button" id="saveFile" value="LOGIN">
+            </div>
+
+            <div id="results"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../static/webcam.min.js"></script>
+
+    <script language="JavaScript">
+        Webcam.set({
+            width: 400,
+            height: 300,
+            image_format: 'png',
+            jpeg_quality: 90
+        });
+        Webcam.attach('#my_camera');
+
+        function take_snapshot() {
+
+            Webcam.snap(function(data_uri) {
+                document.getElementById('results').innerHTML =
+                    '<img id="saveImg"  src="' + data_uri + '"/>';
+            });
+        }
+
+        saveFile.onclick = function() {
+            var a = document.createElement('a');
+            a.href = saveImg.src;
+            a.download = "input"
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            var b = document.getElementById('mybutton');
+            b.click();
+        };
+    </script>
+</body>
+
+</html>

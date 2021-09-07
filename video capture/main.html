@@ -76,58 +76,10 @@
                 <span class="sr-only">Next</span>
             </a>
         </div><br><br>
-
-
-        <br><br>
-        <div class="camera">
-            <div id="my_camera"></div>
-
-            <div class="mybutton">
-                <form action="https://localhost:5000/scrap" method="post">
-                    <input type="button" value="TAKE A SNAP" onclick="take_snapshot()">
-                </form>
-                <input type="button" id="saveFile" value="LOGIN">
-            </div>
-
-            <div id="results"></div>
         </div>
-
-
-        </div>
-    </div>
-    <script type="text/javascript" src="../static/webcam.min.js"></script>
-
-    <script language="JavaScript">
-        Webcam.set({
-            width: 400,
-            height: 300,
-            image_format: 'png',
-            jpeg_quality: 90
-        });
-        Webcam.attach('#my_camera');
-
-        function take_snapshot() {
-
-            Webcam.snap(function(data_uri) {
-                document.getElementById('results').innerHTML =
-                    '<img id="saveImg"  src="' + data_uri + '"/>';
-            });
-        }
-
-        saveFile.onclick = function() {
-            var a = document.createElement('a');
-            a.href = saveImg.src;
-            a.download = "input"
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            var b = document.getElementById('mybutton');
-            b.click();
-        };
-    </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
