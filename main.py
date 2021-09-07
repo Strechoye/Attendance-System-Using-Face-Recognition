@@ -26,6 +26,10 @@ def si():
 def profile():
     return render_template('profile.html')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
 @app.route('/sign', methods=['POST', 'GET'])
 def details():
     if request.method == 'POST':
